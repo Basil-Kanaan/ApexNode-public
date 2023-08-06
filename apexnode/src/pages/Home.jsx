@@ -1,14 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 import FeatureCard from '../components/FeatureCard';
 
 function Home() {
     return (
         <div>
             <section className="hero">
-                <img src="https://via.placeholder.com/200x100" alt="ApexNode Logo" />
-                <h1>ApexNode</h1>
-                <p>Your Solution for App & Website Development</p>
-                <a href="#contact"><button>Contact Us</button></a>
+                <div className="hero-image"></div>
+                <div className="hero-content">
+                    <h1 className="hero-title">ApexNode</h1>
+                    <p className="hero-description">Your Solution for App & Website Development</p>
+                    <Link to="/contact">
+                        <Button className="primary-button" variant="contained" size="large">
+                            Contact Us
+                        </Button>
+                    </Link>
+                </div>
             </section>
             <section className="about" id="about">
                 <div className="about-container">
@@ -33,16 +41,23 @@ function Home() {
             </section>
             <section className="cta" id="contact">
                 <h2>Ready to Outsource Your Project?</h2>
-                <a href="#contact"><button>Contact Us</button></a>
+                <Link to="/contact">
+                    <Button className="secondary-button" variant="contained" size="large">
+                        Contact Us
+                    </Button>
+                </Link>
             </section>
             <section className="contact-section">
                 <div className="contact-container">
                     <h2>Contact Us</h2>
                     <p>Have a project in mind? Let's discuss how we can help you achieve your goals.</p>
-                    <a href="mailto:contact@apexnode.com"><button>Email Us</button></a>
+                    <a href="mailto:contact@apexnode.com">
+                        <Button className="primary-button" variant="contained" size="large">
+                            Email Us
+                        </Button>
+                    </a>
                 </div>
             </section>
-            {/* Add other sections as needed */}
         </div>
     );
 }

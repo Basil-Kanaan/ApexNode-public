@@ -3,75 +3,128 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #fff; /* White text color */
-    background-color: #1c1c1c; /* Darker background color */
-}
-
-a {
-    color: #fff; /* White link color */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    color: #333;
+    background-color: #f7f7f7;
 }
 
 /* Navbar styles */
-header {
-    background-color: #29293d; /* Dark purple background */
+.navbar {
+    background-color: #29293d;
+    /* Dark background color */
     padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-    list-style-type: none;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
-nav ul li {
-    display: inline-block;
-    margin-right: 1rem;
+li {
+    margin-left: 1rem;
 }
 
-nav ul li:last-child {
-    margin-right: 0;
+li:first-child {
+    margin-left: 0;
+}
+
+a {
+    color: #fff;
+    /* White text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff4560;
+    /* Magenta color on hover */
 }
 
 /* Hero section styles */
 .hero {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../public/mount_everest.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Create an overlay with blur effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    padding: 4rem;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.hero-title {
+    font-size: 4rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Add text shadow */
+    color: #fff;
+    /* White text color */
 }
 
-.hero p {
-    font-size: 1.2rem;
+.hero-description {
+    font-size: 1.5rem;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Add text shadow */
+    color: #fff;
+    /* White text color */
 }
 
 .hero a {
     display: inline-block;
-    background-color: #ff4560; /* Magenta button background */
-    color: #fff; /* White text color */
+    background-color: #ff4560;
+    /* Magenta button background */
+    color: #fff;
+    /* White text color */
     padding: 1rem 2rem;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add box shadow */
     transition: background-color 0.3s ease;
 }
 
 .hero a:hover {
-    background-color: #e63950; /* Slightly darker magenta on hover */
+    background-color: #e63950;
+    /* Slightly darker magenta on hover */
 }
 
 /* About section styles */
 .about {
-    background-color: #29293d; /* Dark purple background */
+    background-color: #29293d;
+    /* Dark purple background */
     padding: 4rem;
+    color: #fff;
+    /* White text color */
 }
 
 .about h2 {
@@ -85,10 +138,14 @@ nav ul li:last-child {
 
 /* Features section styles */
 .features {
-    background-color: #29293d; /* Dark purple background */
+    background-color: #29293d;
+    /* Dark purple background */
     padding: 4rem;
     text-align: center;
-    background-image: linear-gradient(to right, #29293d, #1c1c1c); /* Gradient background */
+    background-image: linear-gradient(to right, #29293d, #1c1c1c);
+    /* Gradient background */
+    color: #fff;
+    /* White text color */
 }
 
 .features h2 {
@@ -103,22 +160,28 @@ nav ul li:last-child {
 
 /* CTA section styles */
 .cta {
-    background-color: #ff4560; /* Magenta background */
+    background-color: #ff4560;
+    /* Magenta background */
     padding: 4rem;
     text-align: center;
-    background-image: linear-gradient(to right, #ff4560, #29293d); /* Gradient background */
+    background-image: linear-gradient(to right, #ff4560, #29293d);
+    /* Gradient background */
 }
 
 .cta h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #fff;
+    /* White text color */
 }
 
 .cta a {
     display: inline-block;
     margin-top: 1rem;
-    background-color: #29293d; /* Dark purple button background */
-    color: #ffffff; /* White text color */
+    background-color: #29293d;
+    /* Dark purple button background */
+    color: #ffffff;
+    /* White text color */
     padding: 0.8rem 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -127,14 +190,18 @@ nav ul li:last-child {
 }
 
 .cta a:hover {
-    background-color: #1c1c1c; /* Darker color on hover */
+    background-color: #1c1c1c;
+    /* Darker color on hover */
 }
 
 /* Contact section styles */
 .contact-section {
-    background-color: #29293d; /* Dark purple background */
+    background-color: #29293d;
+    /* Dark purple background */
     padding: 4rem;
     text-align: center;
+    color: #fff;
+    /* White text color */
 }
 
 .contact-section h2 {
@@ -149,8 +216,10 @@ nav ul li:last-child {
 .contact-section a {
     display: inline-block;
     margin-top: 1rem;
-    background-color: #ff4560; /* Magenta button background */
-    color: #fff; /* White text color */
+    background-color: #ff4560;
+    /* Magenta button background */
+    color: #fff;
+    /* White text color */
     padding: 0.8rem 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -158,24 +227,6 @@ nav ul li:last-child {
 }
 
 .contact-section a:hover {
-    background-color: #e63950; /* Slightly darker magenta on hover */
+    background-color: #e63950;
+    /* Slightly darker magenta on hover */
 }
-
-/* Scroll animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.fadeInUp {
-    animation: fadeInUp 1s ease;
-}
-
-/* Add other section styles as needed */
-

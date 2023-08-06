@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '@mui/material/styles';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

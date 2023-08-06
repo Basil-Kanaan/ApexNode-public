@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import './styles.css';
+import '@mui/material/styles';
 
 const App = () => {
     return (

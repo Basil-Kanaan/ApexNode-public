@@ -1,9 +1,16 @@
+/* Navbar styles */
 .navbar {
-    background-color: #29293d; /* Dark background color */
+    background-color: #29293d; /* Dark purple background */
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+    width: 100px; /* Set the width of the logo image */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+    transition: transform 0.3s ease;
+}
+
+/* Remove padding around the logo */
 nav {
     display: flex;
     justify-content: space-between;
@@ -35,4 +42,9 @@ a {
 
 a:hover {
     color: #ff4560; /* Magenta color on hover */
+}
+
+/* ApexNode logo animation on hover */
+.logo:hover {
+    transform: scale(1.1); /* Scale the logo image on hover */
 }
