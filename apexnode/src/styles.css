@@ -1,48 +1,51 @@
+/* Global styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff; /* White text color */
+    background-color: #1c1c1c; /* Darker background color */
 }
 
+a {
+    color: #fff; /* White link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar styles */
 header {
-    background-image: url('https://via.placeholder.com/1600x600');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 0;
+    background-color: #29293d; /* Dark purple background */
+    padding: 1rem;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
-nav li {
+nav ul li {
     display: inline-block;
     margin-right: 1rem;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
+nav ul li:last-child {
+    margin-right: 0;
 }
 
+/* Hero section styles */
 .hero {
     text-align: center;
-}
-
-.hero img {
-    width: 200px;
-    height: 100px;
-    margin-bottom: 1rem;
+    padding: 4rem;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
@@ -50,82 +53,129 @@ nav a {
     margin-bottom: 2rem;
 }
 
+.hero a {
+    display: inline-block;
+    background-color: #ff4560; /* Magenta button background */
+    color: #fff; /* White text color */
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: #e63950; /* Slightly darker magenta on hover */
+}
+
+/* About section styles */
+.about {
+    background-color: #29293d; /* Dark purple background */
+    padding: 4rem;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+}
+
+/* Features section styles */
+.features {
+    background-color: #29293d; /* Dark purple background */
+    padding: 4rem;
+    text-align: center;
+    background-image: linear-gradient(to right, #29293d, #1c1c1c); /* Gradient background */
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 .feature-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-.feature-card {
-    width: 250px;
-    padding: 1rem;
-    margin: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
+/* CTA section styles */
 .cta {
-    background-image: url('https://via.placeholder.com/1600x800');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
+    background-color: #ff4560; /* Magenta background */
+    padding: 4rem;
     text-align: center;
-    padding: 4rem 0;
+    background-image: linear-gradient(to right, #ff4560, #29293d); /* Gradient background */
 }
 
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #29293d; /* Dark purple button background */
+    color: #ffffff; /* White text color */
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cta a:hover {
+    background-color: #1c1c1c; /* Darker color on hover */
+}
+
+/* Contact section styles */
 .contact-section {
-    background-color: #f2f2f2;
+    background-color: #29293d; /* Dark purple background */
+    padding: 4rem;
     text-align: center;
-    padding: 4rem 0;
 }
 
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-container h2 {
-    font-size: 2.5rem;
+.contact-section h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-.contact-container p {
+.contact-section p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
 }
 
-.contact-container button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    cursor: pointer;
+.contact-section a {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #ff4560; /* Magenta button background */
+    color: #fff; /* White text color */
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-.contact-container button:hover {
-    background-color: #0056b3;
+.contact-section a:hover {
+    background-color: #e63950; /* Slightly darker magenta on hover */
 }
 
-.about {
-    background-color: #f9f9f9;
-    text-align: center;
-    padding: 4rem 0;
+/* Scroll animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
+.fadeInUp {
+    animation: fadeInUp 1s ease;
 }
 
-.about-container h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
+/* Add other section styles as needed */
 
-.about-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}

@@ -1,8 +1,15 @@
 import React from 'react';
+import FeatureCard from '../components/FeatureCard';
 
-const Home = () => {
+function Home() {
     return (
         <div>
+            <section className="hero">
+                <img src="https://via.placeholder.com/200x100" alt="ApexNode Logo" />
+                <h1>ApexNode</h1>
+                <p>Your Solution for App & Website Development</p>
+                <a href="#contact"><button>Contact Us</button></a>
+            </section>
             <section className="about" id="about">
                 <div className="about-container">
                     <h2>About ApexNode</h2>
@@ -17,6 +24,10 @@ const Home = () => {
                 <h2>Our Services</h2>
                 <div className="feature-container">
                     {/* Create multiple FeatureCard components here to showcase your services */}
+                    <FeatureCard
+                        title="App Development"
+                        description="We offer high-quality app development services to meet your business needs."
+                    />
                     {/* Add more FeatureCard components for other services */}
                 </div>
             </section>
@@ -34,6 +45,6 @@ const Home = () => {
             {/* Add other sections as needed */}
         </div>
     );
-};
+}
 
 export default Home;
