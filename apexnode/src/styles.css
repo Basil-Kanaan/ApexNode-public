@@ -98,25 +98,13 @@ a:hover {
     /* White text color */
 }
 
-.hero a {
-    display: inline-block;
-    background-color: #ff4560;
-    /* Magenta button background */
-    color: #fff;
-    /* White text color */
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* Add box shadow */
-    transition: background-color 0.3s ease;
-}
+
 
 .hero a:hover {
     background-color: #e63950;
     /* Slightly darker magenta on hover */
 }
+
 
 /* About section styles */
 .about {
@@ -175,25 +163,6 @@ a:hover {
     /* White text color */
 }
 
-.cta a {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #29293d;
-    /* Dark purple button background */
-    color: #ffffff;
-    /* White text color */
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.cta a:hover {
-    background-color: #1c1c1c;
-    /* Darker color on hover */
-}
-
 /* Contact section styles */
 .contact-section {
     background-color: #29293d;
@@ -211,22 +180,4 @@ a:hover {
 
 .contact-section p {
     font-size: 1.2rem;
-}
-
-.contact-section a {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #ff4560;
-    /* Magenta button background */
-    color: #fff;
-    /* White text color */
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-}
-
-.contact-section a:hover {
-    background-color: #e63950;
-    /* Slightly darker magenta on hover */
 }
