@@ -3,7 +3,6 @@ import React from 'react';
 const Header = () => {
     return (
         <header>
-            {/* Add your logo and navigation here */}
             <nav>
                 <ul>
                     <li><a href="#features">Features</a></li>
@@ -11,9 +10,10 @@ const Header = () => {
                 </ul>
             </nav>
             <div className="hero">
-                <h1>Outsourcing Company</h1>
+                <img src="https://via.placeholder.com/200x100" alt="ApexNode Logo" />
+                <h1>ApexNode</h1>
                 <p>Your Solution for App & Website Development</p>
-                <button>Contact Us</button>
+                <a href="#contact"><button>Contact Us</button></a>
             </div>
         </header>
     );
