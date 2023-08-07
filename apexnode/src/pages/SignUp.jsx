@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Paper, Typography, TextField, Button, Link } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom'; // Import Link as RouterLink
 
-function Login() {
+function SignUp() {
     return (
         <Container
             sx={{
@@ -30,8 +30,15 @@ function Login() {
                     }}
                 />
                 <Typography variant="h5" component="h1">
-                    Log in to ApexNode
+                    Create an Account
                 </Typography>
+                <TextField
+                    label="Full Name"
+                    fullWidth
+                    sx={{
+                        mb: 2,
+                    }}
+                />
                 <TextField
                     label="Email"
                     fullWidth
@@ -47,6 +54,14 @@ function Login() {
                         mb: 2,
                     }}
                 />
+                <TextField
+                    label="Confirm Password"
+                    type="password"
+                    fullWidth
+                    sx={{
+                        mb: 2,
+                    }}
+                />
                 <Button
                     variant="contained"
                     color="primary"
@@ -55,17 +70,12 @@ function Login() {
                         mt: 2,
                     }}
                 >
-                    Log In
+                    Sign Up
                 </Button>
                 <Typography variant="body2" sx={{ mt: 2 }}>
-                    Don't have an account?{' '}
-                    <Link component={RouterLink} to="/signup" color="primary">
-                        Sign Up
-                    </Link>
-                </Typography>
-                <Typography variant="body2">
-                    <Link component={RouterLink} to="/forgot-password" color="textSecondary">
-                        Forgot Password?
+                    Already have an account?{' '}
+                    <Link component={RouterLink} to="/login" color="primary">
+                        Log In
                     </Link>
                 </Typography>
             </Paper>
@@ -73,4 +83,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default SignUp;

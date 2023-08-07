@@ -10,7 +10,6 @@ body {
 /* Navbar styles */
 .navbar {
     background-color: #29293d;
-    /* Dark background color */
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -38,7 +37,6 @@ li:first-child {
 
 a {
     color: #fff;
-    /* White text color */
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: 500;
@@ -47,7 +45,6 @@ a {
 
 a:hover {
     color: #ff4560;
-    /* Magenta color on hover */
 }
 
 /* Hero section styles */
@@ -62,7 +59,6 @@ a:hover {
     background-position: center;
 }
 
-/* Create an overlay with blur effect */
 .hero::before {
     content: '';
     position: absolute;
@@ -84,61 +80,52 @@ a:hover {
     font-size: 4rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Add text shadow */
     color: #fff;
-    /* White text color */
 }
 
 .hero-description {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Add text shadow */
     color: #fff;
-    /* White text color */
 }
-
-
-
-.hero a:hover {
-    background-color: #e63950;
-    /* Slightly darker magenta on hover */
-}
-
 
 /* About section styles */
 .about {
-    background-color: #29293d;
-    /* Dark purple background */
+    background-color: #e63950;
     padding: 4rem;
     color: #fff;
-    /* White text color */
+    background-image: linear-gradient(to bottom, rgba(230,57,80,1) 0%, rgba(181,23,51,1) 95%, rgba(121,15,34,1) 100%);
+    height: auto;
 }
 
 .about h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 .about p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #fff;
 }
 
 /* Features section styles */
 .features {
-    background-color: #29293d;
-    /* Dark purple background */
+    background-color: #b51733;
     padding: 4rem;
     text-align: center;
-    background-image: linear-gradient(to right, #29293d, #1c1c1c);
-    /* Gradient background */
+    background-image: linear-gradient(to bottom, rgba(181,23,51,1) 0%, rgba(110,20,35,1) 95%, rgba(88,17,29,1) 100%);
     color: #fff;
-    /* White text color */
+    height: auto;
 }
 
 .features h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 .feature-container {
@@ -148,36 +135,37 @@ a:hover {
 
 /* CTA section styles */
 .cta {
-    background-color: #ff4560;
-    /* Magenta background */
+    background-color: #6e1423;
     padding: 4rem;
     text-align: center;
-    background-image: linear-gradient(to right, #ff4560, #29293d);
-    /* Gradient background */
+    background-image: linear-gradient(to bottom, #6e1423, #29293d);
+    height: auto;
 }
 
 .cta h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #fff;
-    /* White text color */
+    font-weight: bold;
 }
 
 /* Contact section styles */
 .contact-section {
-    background-color: #29293d;
-    /* Dark purple background */
+    background-color: #1c1c1c;
     padding: 4rem;
     text-align: center;
     color: #fff;
-    /* White text color */
+    height: auto;
 }
 
 .contact-section h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 .contact-section p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #fff;
 }

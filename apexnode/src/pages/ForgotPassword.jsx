@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Paper, Typography, TextField, Button, Link } from '@mui/material';
-import { AccountCircle } from '@mui/icons-material';
+import { LockOutlined } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
-function Login() {
+function ForgotPassword() {
     return (
         <Container
             sx={{
@@ -22,7 +22,7 @@ function Login() {
                     boxShadow: theme => `0px 2px 4px ${theme.palette.grey[300]}`,
                 }}
             >
-                <AccountCircle
+                <LockOutlined
                     sx={{
                         fontSize: '3rem',
                         mb: 2,
@@ -30,18 +30,13 @@ function Login() {
                     }}
                 />
                 <Typography variant="h5" component="h1">
-                    Log in to ApexNode
+                    Forgot Password
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 2, color: 'text.primary' }}>
+                    Enter your email address to reset your password. A reset link will be sent to your email.
                 </Typography>
                 <TextField
                     label="Email"
-                    fullWidth
-                    sx={{
-                        mb: 2,
-                    }}
-                />
-                <TextField
-                    label="Password"
-                    type="password"
                     fullWidth
                     sx={{
                         mb: 2,
@@ -55,17 +50,12 @@ function Login() {
                         mt: 2,
                     }}
                 >
-                    Log In
+                    Reset Password
                 </Button>
                 <Typography variant="body2" sx={{ mt: 2 }}>
-                    Don't have an account?{' '}
-                    <Link component={RouterLink} to="/signup" color="primary">
-                        Sign Up
-                    </Link>
-                </Typography>
-                <Typography variant="body2">
-                    <Link component={RouterLink} to="/forgot-password" color="textSecondary">
-                        Forgot Password?
+                    Remember your password?{' '}
+                    <Link component={RouterLink} to="/login" color="primary">
+                        Log In
                     </Link>
                 </Typography>
             </Paper>
@@ -73,4 +63,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default ForgotPassword;

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import FeatureCard from '../components/FeatureCard';
 
-function Home() {
+function Landing() {
     return (
         <div>
             <section className="hero">
@@ -43,14 +43,14 @@ function Home() {
                 <h2>Ready to Outsource Your Project?</h2>
                 <Link to="/contact">
                     <Button className="secondary-button" variant="contained" size="large">
-                        Contact Us
+                        Sign Up
                     </Button>
                 </Link>
             </section>
             <section className="contact-section">
                 <div className="contact-container">
                     <h2>Contact Us</h2>
-                    <p>Have a project in mind? Let's discuss how we can help you achieve your goals.</p>
+                    <p>If you have any questions or inquiries, feel free to get in touch with us.</p>
                     <a href="mailto:contact@apexnode.com">
                         <Button className="primary-button" variant="contained" size="large">
                             Email Us
@@ -62,4 +62,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Landing;
