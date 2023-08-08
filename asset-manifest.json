@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ApexNode/static/css/main.52859189.css",
+    "main.css": "/ApexNode/static/css/main.a8542b07.css",
     "main.js": "/ApexNode/static/js/main.668b473c.js",
     "static/js/787.6285751e.chunk.js": "/ApexNode/static/js/787.6285751e.chunk.js",
     "static/media/mount_everest.jpg": "/ApexNode/static/media/mount_everest.f1768a84a8a11d38c059.jpg",
     "index.html": "/ApexNode/index.html",
-    "main.52859189.css.map": "/ApexNode/static/css/main.52859189.css.map",
+    "main.a8542b07.css.map": "/ApexNode/static/css/main.a8542b07.css.map",
     "main.668b473c.js.map": "/ApexNode/static/js/main.668b473c.js.map",
     "787.6285751e.chunk.js.map": "/ApexNode/static/js/787.6285751e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52859189.css",
+    "static/css/main.a8542b07.css",
     "static/js/main.668b473c.js"
   ]
 }
