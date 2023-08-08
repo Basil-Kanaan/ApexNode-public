@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Paper, Typography, TextField, Button, Link } from '@mui/material';
-import { LockOutlined } from '@mui/icons-material';
-import { Link as RouterLink } from 'react-router-dom';
+import {Button, Container, Link, Paper, TextField, Typography} from '@mui/material';
+import {LockOutlined} from '@mui/icons-material';
+import {Link as RouterLink} from 'react-router-dom';
 
 function ForgotPassword() {
     return (
@@ -32,7 +32,7 @@ function ForgotPassword() {
                 <Typography variant="h5" component="h1">
                     Forgot Password
                 </Typography>
-                <Typography variant="body2" sx={{ mt: 2, color: 'text.primary' }}>
+                <Typography variant="body2" sx={{mt: 2, color: 'text.primary'}}>
                     Enter your email address to reset your password. A reset link will be sent to your email.
                 </Typography>
                 <TextField
@@ -52,9 +52,9 @@ function ForgotPassword() {
                 >
                     Reset Password
                 </Button>
-                <Typography variant="body2" sx={{ mt: 2 }}>
+                <Typography variant="body2" sx={{mt: 2}}>
                     Remember your password?{' '}
-                    <Link component={RouterLink} to="/login" color="primary">
+                    <Link component={RouterLink} to="/ApexNode/login" color="primary">
                         Log In
                     </Link>
                 </Typography>

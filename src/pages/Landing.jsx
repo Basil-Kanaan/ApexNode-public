@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Button} from '@mui/material';
 import FeatureCard from '../components/FeatureCard';
-
-
 
 
 function Landing() {
@@ -14,9 +12,9 @@ function Landing() {
                 <div className="hero-content">
                     <h1 className="hero-title">ApexNode</h1>
                     <p className="hero-description">Your Solution for App & Website Development</p>
-                    <Link to="/contact">
-                        <Button className="primary-button" variant="contained" size="large">
-                            Contact Us
+                    <Link to="/ApexNode/signup">
+                        <Button className="secondary-button" variant="contained" size="large">
+                            Sign Up
                         </Button>
                     </Link>
                 </div>
@@ -26,8 +24,10 @@ function Landing() {
                     <h2>About ApexNode</h2>
                     <p>
                         ApexNode is a cutting-edge platform for outsourcing services. Join our hierarchical workforce,
-                        level up your skills, and collaborate on client projects. Fair compensation based on contributions.
-                        Empowering developers to reach new heights. Join us in shaping the future of outsourcing. #ApexNode
+                        level up your skills, and collaborate on client projects. Fair compensation based on
+                        contributions.
+                        Empowering developers to reach new heights. Join us in shaping the future of outsourcing.
+                        #ApexNode
                     </p>
                 </div>
             </section>
@@ -44,13 +44,13 @@ function Landing() {
             </section>
             <section className="cta" id="contact">
                 <h2>Ready to Outsource Your Project?</h2>
-                <Link to="/contact">
+                <Link to="/ApexNode/signup">
                     <Button className="secondary-button" variant="contained" size="large">
                         Sign Up
                     </Button>
                 </Link>
             </section>
-            <section className="contact-section">
+            <section className="contact-section" id={"contact"}>
                 <div className="contact-container">
                     <h2>Contact Us</h2>
                     <p>If you have any questions or inquiries, feel free to get in touch with us.</p>

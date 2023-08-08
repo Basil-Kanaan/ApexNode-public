@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Paper, Typography, TextField, Button, Link } from '@mui/material';
-import { AccountCircle } from '@mui/icons-material';
-import { Link as RouterLink } from 'react-router-dom'; // Import Link as RouterLink
+import {Button, Container, Link, Paper, TextField, Typography} from '@mui/material';
+import {AccountCircle} from '@mui/icons-material';
+import {Link as RouterLink} from 'react-router-dom'; // Import Link as RouterLink
 
 function SignUp() {
     return (
@@ -72,9 +72,9 @@ function SignUp() {
                 >
                     Sign Up
                 </Button>
-                <Typography variant="body2" sx={{ mt: 2 }}>
+                <Typography variant="body2" sx={{mt: 2}}>
                     Already have an account?{' '}
-                    <Link component={RouterLink} to="/login" color="primary">
+                    <Link component={RouterLink} to="/ApexNode/login" color="primary">
                         Log In
                     </Link>
                 </Typography>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeatureCard = ({ title, description }) => {
+const FeatureCard = ({title, description}) => {
     return (
         <div className="feature-card">
             <h3>{title}</h3>

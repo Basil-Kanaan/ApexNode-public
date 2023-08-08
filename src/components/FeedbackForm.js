@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const FeedbackForm = () => {
     const [rating, setRating] = useState(0);
@@ -23,11 +23,11 @@ const FeedbackForm = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Rating:</label>
-                    <input type="number" min="1" max="5" value={rating} onChange={handleRatingChange} />
+                    <input type="number" min="1" max="5" value={rating} onChange={handleRatingChange}/>
                 </div>
                 <div>
                     <label>Feedback:</label>
-                    <textarea value={feedback} onChange={handleFeedbackChange} />
+                    <textarea value={feedback} onChange={handleFeedbackChange}/>
                 </div>
                 <button type="submit">Submit</button>
             </form>
