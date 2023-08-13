@@ -4,12 +4,12 @@ import React, { createContext, useState, useContext } from 'react';
 const AuthContext = createContext();
 
 // Custom hook to access the AuthContext
-export const useAuth = () => {
+const useAuth = () => {
     return useContext(AuthContext);
 };
 
 // AuthProvider component to wrap your application and provide authentication context
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
     const [userRole, setUserRole] = useState(null); // Set the initial user role to null or a default role
 
     // Update the user role when the user logs in
@@ -34,4 +34,9 @@ export const AuthProvider = ({ children }) => {
             {children}
         </AuthContext.Provider>
     );
+};
+
+export {
+    AuthProvider,
+    useAuth
 };

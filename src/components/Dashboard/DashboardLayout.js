@@ -1,30 +1,20 @@
-import React, { useContext } from 'react';
-import { Route, Routes } from 'react-router-dom'; // Make sure to import Routes and Route
-import AdminDashboard from './AdminDashboard'; // Import the AdminDashboard.js component
-import ClientDashboard from './ClientDashboard'; // Import the ClientDashboard component
-import DeveloperDashboard from './DeveloperDashboard'; // Import the DeveloperDashboard component
-import {useAuth} from '../../AuthContext';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import AdminDashboard from './AdminDashboard';
+import ClientDashboard from './ClientDashboard';
+import DeveloperDashboard from './DeveloperDashboard';
+import { useAuth } from '../../AuthContext';
 
 const DashboardLayout = () => {
-    const { userRole } = useContext(useAuth);
-
-    // Dynamically render the appropriate dashboard content based on user role
-    const renderDashboardContent = () => {
-        switch (userRole) {
-            case 'admin':
-                return <AdminDashboard />;
-            case 'client':
-                return <ClientDashboard />;
-            case 'developer':
-                return <DeveloperDashboard />;
-            default:
-                return null;
-        }
-    };
+    const { userRole } = useAuth();
 
     return (
         <div>
             {/* Common dashboard layout components */}
+            <header>
+                <h1>Welcome to ApexNode Dashboard</h1>
+                <p>Your Role: {userRole}</p>
+            </header>
 
             {/* Nested routes for specific dashboard features */}
             <Routes>
@@ -36,9 +26,17 @@ const DashboardLayout = () => {
             </Routes>
 
             {/* Render the appropriate dashboard content */}
-            {renderDashboardContent()}
+            <div>
+                {userRole === 'admin' && <AdminDashboard />}
+                {userRole === 'client' && <ClientDashboard />}
+                {userRole === 'developer' && <DeveloperDashboard />}
+                {/* Add more conditions for other roles */}
+            </div>
 
             {/* Other common dashboard components */}
+            <footer>
+                <p>Contact Us: contact@apexnode.com</p>
+            </footer>
         </div>
     );
 };

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import {useAuth} from '../../AuthContext';
+import React from 'react';
+import { useAuth } from '../../AuthContext';
 
 const DeveloperDashboard = () => {
-    const { userRole } = useContext(useAuth);
+    const { userRole } = useAuth();
 
     return (
         <div>

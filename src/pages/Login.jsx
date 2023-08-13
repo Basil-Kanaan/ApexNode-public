@@ -1,34 +1,27 @@
 import React, { useState } from 'react';
 import { Button, Container, Link, Paper, TextField, Typography } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
-import { Link as RouterLink} from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
 
 import { useAuth } from '../AuthContext';
 
 function Login() {
-    const { login } = useAuth(); // Get the login function from AuthContext
-    // const history = useHistory(); // Import useHistory from react-router-dom
+    const { login } = useAuth();
+    const navigate = useNavigate(); // Use useNavigate from react-router-dom
 
     const [loginError, setLoginError] = useState(false);
 
-    // Simulate a successful login and navigate to the dashboard
     const handleLogin = () => {
-        // Replace with actual API call for authentication
-        // Example: make an API call with user credentials, get user role and token
-        const userRole = 'admin'; // Replace with the user's role obtained from the API
+        const userRole = 'admin';
 
         if (userRole) {
-            // Call the login function from AuthContext
             login(userRole);
-
-            // Navigate to the dashboard based on user role
-            // (Note: Use proper route based on your route structure)
-            // history.push('/ApexNode/dashboard'); // Navigate to the dashboard
+            navigate('/ApexNode/dashboard'); // Navigate to the dashboard using navigate
         } else {
-            // Set login error state
             setLoginError(true);
         }
     };
+
 
     return (
         <Container

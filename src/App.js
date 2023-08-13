@@ -14,17 +14,15 @@ import '@mui/material/styles';
 const App = () => {
     return (
         <Router>
-            <AuthProvider> {/* Wrap your app with AuthProvider */}
-                <div>
-                    <NavBar />
-                    <Routes>
-                        <Route path="/ApexNode/" element={<Landing />} />
-                        <Route path="/ApexNode/login" element={<Login />} />
-                        <Route path="/ApexNode/signup" element={<SignUp />} />
-                        <Route path="/ApexNode/forgot-password" element={<ForgotPassword />} />
-                        <Route path="/ApexNode/dashboard" element={<DashboardLayout />} /> {/* Add the dashboard route */}
-                    </Routes>
-                </div>
+            <AuthProvider>
+                <NavBar />
+                <Routes>
+                    <Route path="/ApexNode/" element={<Landing />} />
+                    <Route path="/ApexNode/login" element={<Login />} />
+                    <Route path="/ApexNode/signup" element={<SignUp />} />
+                    <Route path="/ApexNode/forgot-password" element={<ForgotPassword />} />
+                    <Route path="/ApexNode/dashboard/*" element={<DashboardLayout />} /> {/* Add the dashboard route */}
+                </Routes>
             </AuthProvider>
         </Router>
     );
