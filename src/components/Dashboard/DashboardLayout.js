@@ -1,22 +1,24 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AdminDashboard from './AdminDashboard';
-import ClientDashboard from './ClientDashboard';
-import DeveloperDashboard from './DeveloperDashboard';
 import { useAuth } from '../../AuthContext';
+import { Container, Header, Content, Footer } from './styles';
+import AdminDashboard from "./AdminDashboard";
+import ClientDashboard from "./ClientDashboard";
+import DeveloperDashboard from "./DeveloperDashboard"; // Import styles
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 const DashboardLayout = () => {
     const { userRole } = useAuth();
 
     return (
-        <div>
-            {/* Common dashboard layout components */}
-            <header>
-                <h1>Welcome to ApexNode Dashboard</h1>
-                <p>Your Role: {userRole}</p>
-            </header>
+        <Container>
+            <Header>
+                <h1>{capitalizeFirstLetter(userRole)} Dashboard</h1>
+            </Header>
 
-            {/* Nested routes for specific dashboard features */}
             <Routes>
                 {/* Define nested routes for each role's dashboard */}
                 <Route path="/" element={<div></div>}>
@@ -25,19 +27,18 @@ const DashboardLayout = () => {
                 </Route>
             </Routes>
 
-            {/* Render the appropriate dashboard content */}
-            <div>
+            <Content>
+                {/* Render the appropriate dashboard content */}
                 {userRole === 'admin' && <AdminDashboard />}
                 {userRole === 'client' && <ClientDashboard />}
                 {userRole === 'developer' && <DeveloperDashboard />}
                 {/* Add more conditions for other roles */}
-            </div>
+            </Content>
 
-            {/* Other common dashboard components */}
-            <footer>
+            <Footer>
                 <p>Contact Us: contact@apexnode.com</p>
-            </footer>
-        </div>
+            </Footer>
+        </Container>
     );
 };
 

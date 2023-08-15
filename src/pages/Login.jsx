@@ -12,7 +12,7 @@ function Login() {
     const [loginError, setLoginError] = useState(false);
 
     const handleLogin = () => {
-        const userRole = 'admin';
+        const userRole = 'client';
 
         if (userRole) {
             login(userRole);
