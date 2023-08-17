@@ -7,20 +7,19 @@ export const Container = styled('div')({
 });
 
 export const Header = styled('header')({
-    backgroundColor: '#1976d2',
+    background: "linear-gradient(to bottom, rgba(181, 23, 51, 1) 0%, rgba(110, 20, 35, 1) 95%, rgba(88, 17, 29, 1) 100%);", /* Update the gradient colors */
     color: 'white',
-    padding: '16px',
+    padding: '1rem',
     textAlign: 'center',
 });
 
 export const Content = styled('div')({
     flexGrow: 1,
-    padding: '16px',
 });
 
 export const Footer = styled('footer')({
-    backgroundColor: '#1976d2',
+    backgroundColor: '#1c1c1c',
     color: 'white',
-    padding: '16px',
+    padding: '1rem',
     textAlign: 'center',
 });

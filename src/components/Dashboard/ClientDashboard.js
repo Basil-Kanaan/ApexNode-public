@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../AuthContext';
-import {AppBar, Button, Card, CardContent, Container, Divider, Tab, Tabs, Toolbar, Typography} from "@mui/material";
+import { Button, Divider, Typography} from "@mui/material";
 import { Content } from './styles';
 import ProjectCard from "../ProjectCard";
+import DBNavBar from "./DBNavBar";
 
 const ClientDashboard = () => {
     const { userRole } = useAuth();
@@ -11,51 +12,14 @@ const ClientDashboard = () => {
         // Implement logic to create a new project
     };
 
-    const [selectedTab, setSelectedTab] = useState(0);
-
-    const handleTabChange = (event, newValue) => {
-        setSelectedTab(newValue);
-    };
+    const [selectedTab] = useState(0);
 
     return (
-        <Container>
+        <div>
             {userRole === 'client' && (
                 <Content>
                     <div>
-                        <AppBar position="static" sx={{ marginBottom: "1rem"}}>
-                            <Toolbar sx={{ justifyContent: 'flex-end' }}>
-                                <Tabs
-                                    value={selectedTab}
-                                    onChange={handleTabChange}
-                                    textColor="inherit"
-                                    indicatorColor="primary"
-                                    variant="scrollable"
-                                    scrollButtons="off"
-                                    TabIndicatorProps={{
-                                        style: { display: 'none' },
-                                    }}
-                                >
-                                    <Tab
-                                        label="Projects"
-                                        sx={{
-                                            fontSize: '1.1rem',
-                                        }}
-                                    />
-                                    <Tab
-                                        label="Messages"
-                                        sx={{
-                                            fontSize: '1.1rem',
-                                        }}
-                                    />
-                                    <Tab
-                                        label="Settings"
-                                        sx={{
-                                            fontSize: '1.1rem',
-                                        }}
-                                    />
-                                </Tabs>
-                            </Toolbar>
-                        </AppBar>
+                        <DBNavBar/>
 
                         {selectedTab === 0 && (
                             <div>
@@ -71,14 +35,7 @@ const ClientDashboard = () => {
                             </div>
                         )}
 
-                        {selectedTab === 1 && (
-                            <div>
-                                {/* Content for "Messages" tab */}
-                                <Typography variant="h4">Messages</Typography>
-                                <Divider sx={{ my: 2 }} />
 
-                            </div>
-                        )}
 
                         {selectedTab === 2 && (
                             <div>
@@ -91,7 +48,7 @@ const ClientDashboard = () => {
                     </div>
                 </Content>
             )}
-        </Container>
+        </div>
     );
 };
 
