@@ -1,42 +1,44 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
-// Create a context for managing user authentication and role
 const AuthContext = createContext();
 
-// Custom hook to access the AuthContext
-const useAuth = () => {
+export const useAuth = () => {
     return useContext(AuthContext);
 };
 
-// AuthProvider component to wrap your application and provide authentication context
-const AuthProvider = ({ children }) => {
-    const [userRole, setUserRole] = useState(null); // Set the initial user role to null or a default role
+export const AuthProvider = ({ children }) => {
+    const [userRole, setUserRole] = useState(() => {
+        const storedUserRole = localStorage.getItem('userRole');
+        return storedUserRole || null;
+    });
 
-    // Update the user role when the user logs in
     const login = (role) => {
         setUserRole(role);
+        localStorage.setItem('userRole', role);
     };
 
-    // Log the user out
     const logout = () => {
         setUserRole(null);
+        localStorage.removeItem('userRole');
     };
 
-    // Provide the context values to children components
     const authContextValues = {
         userRole,
         login,
         logout,
     };
 
+    useEffect(() => {
+        // Ensure userRole is updated when localStorage changes
+        const storedUserRole = localStorage.getItem('userRole');
+        if (storedUserRole !== userRole) {
+            setUserRole(storedUserRole);
+        }
+    }, [userRole]);
+
     return (
         <AuthContext.Provider value={authContextValues}>
             {children}
         </AuthContext.Provider>
     );
-};
-
-export {
-    AuthProvider,
-    useAuth
 };
