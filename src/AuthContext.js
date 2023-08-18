@@ -22,10 +22,15 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('userRole');
     };
 
+    const isAuth = () => {
+        return userRole !== null;
+    }
+
     const authContextValues = {
         userRole,
         login,
         logout,
+        isAuth
     };
 
     useEffect(() => {
