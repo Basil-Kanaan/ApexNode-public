@@ -1,17 +1,25 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom';
-import {useAuth} from '../../AuthContext';
-import {Container, Content, Footer, Header} from './styles';
-import AdminDashboard from "./AdminDashboard";
-import ClientDashboard from "./ClientDashboard";
-import DeveloperDashboard from "./DeveloperDashboard"; // Import styles
+import { Route, Routes, Navigate} from 'react-router-dom';
+import { useAuth } from '../../AuthContext';
+import { Container, Content, Footer, Header } from './styles';
+import AdminDashboard from './AdminDashboard';
+import ClientDashboard from './ClientDashboard';
+import DeveloperDashboard from './DeveloperDashboard';
+import DBNavBar from "./DBNavBar";
+import Home from "../../pages/App/Home";
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-const DashboardLayout = () => {
-    const {userRole} = useAuth();
+function DashboardLayout() {
+    const { userRole } = useAuth();
+
+    const DashboardComponent = {
+        admin: AdminDashboard,
+        client: ClientDashboard,
+        developer: DeveloperDashboard,
+    }[userRole] || null;
 
     return (
         <Container>
@@ -19,20 +27,17 @@ const DashboardLayout = () => {
                 <h1>{capitalizeFirstLetter(userRole)} Dashboard</h1>
             </Header>
 
+            <DBNavBar/>
             <Routes>
-                {/* Define nested routes for each role's dashboard */}
-                <Route path="/" element={<div></div>}>
-                    {/* Example: /dashboard/projects */}
-                    {/* You can define nested routes for each dashboard */}
-                </Route>
+                <Route path="/" element={<Navigate to="home" />} />
+                <Route path="/home" element={<Home/>} />
+                <Route path="/projects" element={<div></div>} />
+                <Route path="/messages" element={<div></div>} />
+                <Route path="/settings" element={<div></div>} />
             </Routes>
 
             <Content>
-                {/* Render the appropriate dashboard content */}
-                {userRole === 'admin' && <AdminDashboard/>}
-                {userRole === 'client' && <ClientDashboard/>}
-                {userRole === 'developer' && <DeveloperDashboard/>}
-                {/* Add more conditions for other roles */}
+                {DashboardComponent && <DashboardComponent />}
             </Content>
 
             <Footer>
@@ -40,6 +45,6 @@ const DashboardLayout = () => {
             </Footer>
         </Container>
     );
-};
+}
 
 export default DashboardLayout;

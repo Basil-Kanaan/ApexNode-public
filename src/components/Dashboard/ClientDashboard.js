@@ -5,8 +5,8 @@ import {Content, Page} from './styles';
 import ProjectCard from "../ProjectCard";
 import DBNavBar from "./DBNavBar";
 
-const ClientDashboard = () => {
-    const {userRole} = useAuth();
+function ClientDashboard() {
+    const { userRole } = useAuth();
 
     const handleCreateProject = () => {
         // Implement logic to create a new project
@@ -19,8 +19,6 @@ const ClientDashboard = () => {
             {userRole === 'client' && (
                 <Content>
                     <div>
-                        <DBNavBar/>
-
                         <Page>
                             {selectedTab === 0 && (
                                 <div>
@@ -46,12 +44,11 @@ const ClientDashboard = () => {
                                 </div>
                             )}
                         </Page>
-
                     </div>
                 </Content>
             )}
         </div>
     );
-};
+}
 
 export default ClientDashboard;

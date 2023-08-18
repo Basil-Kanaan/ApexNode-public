@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import {AppBar, Tab, Tabs, Toolbar} from '@mui/material';
-import {Folder, Message, Settings} from '@mui/icons-material'; // Import icons
+import {Home, Folder, Message, Settings} from '@mui/icons-material'; // Import icons
 
 const DBNavBar = () => {
     const [selectedTab, setSelectedTab] = useState(0);
+    const navigate = useNavigate();
 
     const tabs = [
+        {label: 'Home', icon: <Home/>},
         {label: 'Projects', icon: <Folder/>},
         {label: 'Messages', icon: <Message/>},
         {label: 'Settings', icon: <Settings/>},
@@ -13,6 +16,7 @@ const DBNavBar = () => {
 
     const handleTabChange = (event, newValue) => {
         setSelectedTab(newValue);
+        navigate("/ApexNode/dashboard/" + tabs[newValue].label.toLowerCase());
     };
 
     return (
