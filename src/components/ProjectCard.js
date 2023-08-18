@@ -4,7 +4,7 @@ import {Card, CardContent, Container, Typography} from "@mui/material";
 const ProjectCard = (props) => {
     return (
         <div>
-            <Container sx={{ mt: 2 }}>
+            <Container sx={{mt: 2}}>
                 <Card>
                     <CardContent>
                         <Typography variant="h6">Project Title</Typography>

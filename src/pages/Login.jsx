@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import { Button, Container, Link, Paper, TextField, Typography } from '@mui/material';
-import { AccountCircle } from '@mui/icons-material';
-import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Use useNavigate instead of useHistory
-
-import { useAuth } from '../AuthContext';
+import React, {useState} from 'react';
+import {Button, Container, Link, Paper, TextField, Typography} from '@mui/material';
+import {AccountCircle} from '@mui/icons-material';
+import {Link as RouterLink, useNavigate} from 'react-router-dom'; // Use useNavigate instead of useHistory
+import {useAuth} from '../AuthContext';
 
 function Login() {
-    const { login } = useAuth();
+    const {login} = useAuth();
     const navigate = useNavigate(); // Use useNavigate from react-router-dom
 
     const [loginError, setLoginError] = useState(false);
@@ -78,11 +77,11 @@ function Login() {
                     Log In
                 </Button>
                 {loginError && (
-                    <Typography variant="body2" color="error" sx={{ mt: 2 }}>
+                    <Typography variant="body2" color="error" sx={{mt: 2}}>
                         Login failed. Please check your credentials.
                     </Typography>
                 )}
-                <Typography variant="body2" sx={{ mt: 2 }}>
+                <Typography variant="body2" sx={{mt: 2}}>
                     Don't have an account?{' '}
                     <Link component={RouterLink} to="/ApexNode/signup" color="primary">
                         Sign Up

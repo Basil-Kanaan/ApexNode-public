@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { useAuth } from '../../AuthContext';
-import { Container, Header, Content, Footer } from './styles';
+import {Route, Routes} from 'react-router-dom';
+import {useAuth} from '../../AuthContext';
+import {Container, Content, Footer, Header} from './styles';
 import AdminDashboard from "./AdminDashboard";
 import ClientDashboard from "./ClientDashboard";
 import DeveloperDashboard from "./DeveloperDashboard"; // Import styles
@@ -11,7 +11,7 @@ function capitalizeFirstLetter(string) {
 }
 
 const DashboardLayout = () => {
-    const { userRole } = useAuth();
+    const {userRole} = useAuth();
 
     return (
         <Container>
@@ -29,9 +29,9 @@ const DashboardLayout = () => {
 
             <Content>
                 {/* Render the appropriate dashboard content */}
-                {userRole === 'admin' && <AdminDashboard />}
-                {userRole === 'client' && <ClientDashboard />}
-                {userRole === 'developer' && <DeveloperDashboard />}
+                {userRole === 'admin' && <AdminDashboard/>}
+                {userRole === 'client' && <ClientDashboard/>}
+                {userRole === 'developer' && <DeveloperDashboard/>}
                 {/* Add more conditions for other roles */}
             </Content>
 

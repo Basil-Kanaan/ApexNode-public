@@ -1,8 +1,8 @@
 import React from 'react';
-import { useAuth } from '../../AuthContext';
+import {useAuth} from '../../AuthContext';
 
 const AdminDashboard = () => {
-    const { userRole } = useAuth();
+    const {userRole} = useAuth();
 
     return (
         <div>

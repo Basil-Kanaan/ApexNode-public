@@ -1,4 +1,4 @@
-import { styled } from '@mui/system';
+import {styled} from '@mui/system';
 
 export const Container = styled('div')({
     display: 'flex',
@@ -22,4 +22,9 @@ export const Footer = styled('footer')({
     color: 'white',
     padding: '1rem',
     textAlign: 'center',
+});
+
+
+export const Page = styled('div')({
+    padding: "1rem",
 });
