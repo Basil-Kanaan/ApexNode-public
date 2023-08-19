@@ -7,6 +7,7 @@ import ClientDashboard from './ClientDashboard';
 import DeveloperDashboard from './DeveloperDashboard';
 import DBNavBar from "./DBNavBar";
 import Home from "../../pages/App/Home";
+import NotFound from "../../pages/NotFound";
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -34,6 +35,7 @@ function DashboardLayout() {
                 <Route path="/projects" element={<div></div>} />
                 <Route path="/messages" element={<div></div>} />
                 <Route path="/settings" element={<div></div>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
 
             <Content>

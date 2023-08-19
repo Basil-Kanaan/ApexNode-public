@@ -9,6 +9,7 @@ import DashboardLayout from './components/Dashboard/DashboardLayout';
 import { AuthProvider, useAuth } from './AuthContext';
 import './styles.css';
 import '@mui/material/styles';
+import NotFound from "./pages/NotFound";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path="/ApexNode/signup" element={<SignUp />} />
                     <Route path="/ApexNode/forgot-password" element={<ForgotPassword />} />
                     <Route path="/ApexNode/dashboard/*" element={<ProtectedDashboard />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </AuthProvider>
