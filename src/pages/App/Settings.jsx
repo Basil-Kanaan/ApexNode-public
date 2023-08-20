@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Divider, List, ListItem, ListItemText, Card, CardContent } from '@mui/material';
+import {Typography, Divider, List, ListItemText, Card, CardContent, ListItemButton} from '@mui/material';
 
 const Settings = () => {
     const [selectedSetting, setSelectedSetting] = useState('account');
@@ -49,15 +49,16 @@ const Settings = () => {
                 <Typography variant="h5">Settings</Typography>
                 <Divider sx={{ my: 1 }} />
                 <List>
-                    <ListItem button onClick={() => handleSettingClick('account')}>
+                    <ListItemButton
+                        onClick={() => handleSettingClick('account')}>
                         <ListItemText primary="Account Settings" />
-                    </ListItem>
-                    <ListItem button onClick={() => handleSettingClick('project')}>
+                    </ListItemButton>
+                    <ListItemButton onClick={() => handleSettingClick('project')}>
                         <ListItemText primary="Project Settings" />
-                    </ListItem>
-                    <ListItem button onClick={() => handleSettingClick('preferences')}>
+                    </ListItemButton>
+                    <ListItemButton onClick={() => handleSettingClick('preferences')}>
                         <ListItemText primary="Preferences" />
-                    </ListItem>
+                    </ListItemButton>
                     {/* Add more settings sections here */}
                 </List>
             </div>

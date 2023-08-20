@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, Divider, List, ListItem, ListItemText } from '@mui/material';
+import {Typography, Divider, List, ListItemText, ListItemButton} from '@mui/material';
 import ChatWindow from "../../components/ChatWindow";
 
 const Messages = () => {
@@ -22,14 +22,13 @@ const Messages = () => {
                 <Divider sx={{ my: 1 }} />
                 <List sx={{ overflowY: 'auto', maxHeight: 'calc(100vh - 64px)' }}>
                     {conversations.map((conversation) => (
-                        <ListItem
-                            button
+                        <ListItemButton
                             key={conversation.id}
                             onClick={() => handleConversationClick(conversation)}
                             sx={{ borderRadius: '5px', my: 1, backgroundColor: selectedConversation?.id === conversation.id ? '#f0f0f0' : 'inherit' }}
                         >
                             <ListItemText primary={conversation.name} />
-                        </ListItem>
+                        </ListItemButton>
                     ))}
                 </List>
             </div>
