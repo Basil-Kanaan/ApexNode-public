@@ -1,23 +1,36 @@
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
-import {AppBar, Tab, Tabs, Toolbar} from '@mui/material';
-import {Home, Folder, Message, Settings} from '@mui/icons-material'; // Import icons
+import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { AppBar, Tab, Tabs, Toolbar } from '@mui/material';
+import { Home, Folder, Message, Settings } from '@mui/icons-material'; // Import icons
 
-const DBNavBar = () => {
-    const [selectedTab, setSelectedTab] = useState(0);
+const DBNavBar = ({ setSelectedTab }) => {
+    const [selectedTab, setSelectedTabState] = useState(0);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    const tabs = [
-        {label: 'Home', icon: <Home/>},
-        {label: 'Projects', icon: <Folder/>},
-        {label: 'Messages', icon: <Message/>},
-        {label: 'Settings', icon: <Settings/>},
-    ];
+    const tabs = useMemo(() => [
+        { label: 'Home', icon: <Home /> },
+        { label: 'Projects', icon: <Folder /> },
+        { label: 'Messages', icon: <Message /> },
+        { label: 'Settings', icon: <Settings /> },
+    ], []); // Memoize the tabs array
+
+    useEffect(() => {
+        const tabName = location.pathname.split('/').pop();
+        const tabIndex = tabs.findIndex(tab => tab.label.toLowerCase() === tabName);
+        if (tabIndex !== -1) {
+            setSelectedTabState(tabIndex);
+        }
+    }, [location.pathname, tabs]);
 
     const handleTabChange = (event, newValue) => {
-        setSelectedTab(newValue);
-        navigate("/ApexNode/dashboard/" + tabs[newValue].label.toLowerCase());
+        setSelectedTabState(newValue);
+        navigate('/ApexNode/dashboard/' + tabs[newValue].label.toLowerCase());
     };
+
+    useEffect(() => {
+        setSelectedTab(selectedTab);
+    }, [selectedTab, setSelectedTab]);
 
     return (
         <AppBar
@@ -27,7 +40,7 @@ const DBNavBar = () => {
                 marginBottom: '1rem',
             }}
         >
-            <Toolbar sx={{justifyContent: 'flex-end'}}>
+            <Toolbar sx={{ justifyContent: 'flex-end' }}>
                 <Tabs
                     value={selectedTab}
                     onChange={handleTabChange}

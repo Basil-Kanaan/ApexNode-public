@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route, Routes, Navigate} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext';
-import { Container, Content, Footer, Header } from './styles';
-import AdminDashboard from './AdminDashboard';
-import ClientDashboard from './ClientDashboard';
-import DeveloperDashboard from './DeveloperDashboard';
-import DBNavBar from "./DBNavBar";
-import Home from "../../pages/App/Home";
-import NotFound from "../../pages/NotFound";
+import { Container, Content, Footer, Header, Page } from './styles';
+import DBNavBar from './DBNavBar';
+import Home from '../../pages/App/Home';
+import NotFound from '../../pages/NotFound';
+import Projects from '../../pages/App/Projects';
+import Settings from '../../pages/App/Settings';
+import Messages from '../../pages/App/Messages';
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -15,12 +15,7 @@ function capitalizeFirstLetter(string) {
 
 function DashboardLayout() {
     const { userRole } = useAuth();
-
-    const DashboardComponent = {
-        admin: AdminDashboard,
-        client: ClientDashboard,
-        developer: DeveloperDashboard,
-    }[userRole] || null;
+    const [selectedTab, setSelectedTab] = useState(0); // Define the selected tab state here
 
     return (
         <Container>
@@ -28,18 +23,19 @@ function DashboardLayout() {
                 <h1>{capitalizeFirstLetter(userRole)} Dashboard</h1>
             </Header>
 
-            <DBNavBar/>
-            <Routes>
-                <Route path="/" element={<Navigate to="home" />} />
-                <Route path="/home" element={<Home/>} />
-                <Route path="/projects" element={<div></div>} />
-                <Route path="/messages" element={<div></div>} />
-                <Route path="/settings" element={<div></div>} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+            <DBNavBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} /> {/* Pass the selected tab state and updater function */}
 
             <Content>
-                {DashboardComponent && <DashboardComponent />}
+                <Page>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="home" />} />
+                        <Route path="/home" element={<Home setSelectedTab={setSelectedTab} />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/messages" element={<Messages />} />
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </Page>
             </Content>
 
             <Footer>
