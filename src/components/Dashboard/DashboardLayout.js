@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
-import { useAuth } from '../../AuthContext';
-import { Container, Content, Footer, Header, Page } from './styles';
+import React, {useState} from 'react';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import {useAuth} from '../../AuthContext';
+import {Container, Content, Footer, Header, Page} from './styles';
 import DBNavBar from './DBNavBar';
 import Home from '../../pages/App/Home';
 import NotFound from '../../pages/NotFound';
@@ -14,7 +14,7 @@ function capitalizeFirstLetter(string) {
 }
 
 function DashboardLayout() {
-    const { userRole } = useAuth();
+    const {userRole} = useAuth();
     const [selectedTab, setSelectedTab] = useState(0); // Define the selected tab state here
 
     return (
@@ -23,17 +23,18 @@ function DashboardLayout() {
                 <h1>{capitalizeFirstLetter(userRole)} Dashboard</h1>
             </Header>
 
-            <DBNavBar selectedTab={selectedTab} setSelectedTab={setSelectedTab} /> {/* Pass the selected tab state and updater function */}
+            <DBNavBar selectedTab={selectedTab}
+                      setSelectedTab={setSelectedTab}/> {/* Pass the selected tab state and updater function */}
 
             <Content>
                 <Page>
                     <Routes>
-                        <Route path="/" element={<Navigate to="home" />} />
-                        <Route path="/home" element={<Home setSelectedTab={setSelectedTab} />} />
-                        <Route path="/projects" element={<Projects />} />
-                        <Route path="/messages" element={<Messages />} />
-                        <Route path="/settings" element={<Settings />} />
-                        <Route path="*" element={<NotFound />} />
+                        <Route path="/" element={<Navigate to="home"/>}/>
+                        <Route path="/home" element={<Home setSelectedTab={setSelectedTab}/>}/>
+                        <Route path="/projects" element={<Projects/>}/>
+                        <Route path="/messages" element={<Messages/>}/>
+                        <Route path="/settings" element={<Settings/>}/>
+                        <Route path="*" element={<NotFound/>}/>
                     </Routes>
                 </Page>
             </Content>

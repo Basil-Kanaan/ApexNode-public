@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 
 const AuthContext = createContext();
 
@@ -6,7 +6,7 @@ export const useAuth = () => {
     return useContext(AuthContext);
 };
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({children}) => {
     const [userRole, setUserRole] = useState(() => {
         const storedUserRole = localStorage.getItem('userRole');
         return storedUserRole || null;

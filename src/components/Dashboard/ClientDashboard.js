@@ -3,10 +3,9 @@ import {useAuth} from '../../AuthContext';
 import {Button, Divider, Typography} from "@mui/material";
 import {Content, Page} from './styles';
 import ProjectCard from "../ProjectCard";
-import DBNavBar from "./DBNavBar";
 
 function ClientDashboard() {
-    const { userRole } = useAuth();
+    const {userRole} = useAuth();
 
     const handleCreateProject = () => {
         // Implement logic to create a new project

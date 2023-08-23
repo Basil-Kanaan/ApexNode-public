@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import {Typography, Divider, List, ListItemText, Card, CardContent, ListItemButton} from '@mui/material';
+import React, {useState} from 'react';
+import {Card, CardContent, Divider, List, ListItemButton, ListItemText, Typography} from '@mui/material';
 
 const Settings = () => {
     const [selectedSetting, setSelectedSetting] = useState('account');
@@ -43,29 +43,30 @@ const Settings = () => {
     };
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div style={{display: 'flex'}}>
             {/* Sidebar for different settings sections */}
-            <div style={{ width: '30%', borderRight: '1px solid #ccc', padding: '1rem' }}>
+            <div style={{width: '30%', borderRight: '1px solid #ccc', padding: '1rem'}}>
                 <Typography variant="h5">Settings</Typography>
-                <Divider sx={{ my: 1 }} />
+                <Divider sx={{my: 1}}/>
                 <List>
                     <ListItemButton
                         onClick={() => handleSettingClick('account')}>
-                        <ListItemText primary="Account Settings" />
+                        <ListItemText primary="Account Settings"/>
                     </ListItemButton>
                     <ListItemButton onClick={() => handleSettingClick('project')}>
-                        <ListItemText primary="Project Settings" />
+                        <ListItemText primary="Project Settings"/>
                     </ListItemButton>
                     <ListItemButton onClick={() => handleSettingClick('preferences')}>
-                        <ListItemText primary="Preferences" />
+                        <ListItemText primary="Preferences"/>
                     </ListItemButton>
                     {/* Add more settings sections here */}
                 </List>
             </div>
 
             {/* Content for selected settings section */}
-            <div style={{ flex: 1, padding: '1rem' }}>
-                <Card style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{flex: 1, padding: '1rem'}}>
+                <Card
+                    style={{height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
                     {renderSelectedContent()}
                 </Card>
             </div>

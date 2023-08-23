@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { AppBar, Tab, Tabs, Toolbar } from '@mui/material';
-import { Home, Folder, Message, Settings } from '@mui/icons-material'; // Import icons
+import React, {useEffect, useMemo, useState} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {AppBar, Tab, Tabs, Toolbar} from '@mui/material';
+import {Folder, Home, Message, Settings} from '@mui/icons-material'; // Import icons
 
-const DBNavBar = ({ setSelectedTab }) => {
+const DBNavBar = ({setSelectedTab}) => {
     const [selectedTab, setSelectedTabState] = useState(0);
     const navigate = useNavigate();
     const location = useLocation();
 
     const tabs = useMemo(() => [
-        { label: 'Home', icon: <Home /> },
-        { label: 'Projects', icon: <Folder /> },
-        { label: 'Messages', icon: <Message /> },
-        { label: 'Settings', icon: <Settings /> },
+        {label: 'Home', icon: <Home/>},
+        {label: 'Projects', icon: <Folder/>},
+        {label: 'Messages', icon: <Message/>},
+        {label: 'Settings', icon: <Settings/>},
     ], []); // Memoize the tabs array
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const DBNavBar = ({ setSelectedTab }) => {
                 marginBottom: '1rem',
             }}
         >
-            <Toolbar sx={{ justifyContent: 'flex-end' }}>
+            <Toolbar sx={{justifyContent: 'flex-end'}}>
                 <Tabs
                     value={selectedTab}
                     onChange={handleTabChange}

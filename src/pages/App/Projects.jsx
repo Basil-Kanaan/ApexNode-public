@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Typography, Divider, Button } from '@mui/material';
+import React, {useState} from 'react';
+import {Button, Divider, Typography} from '@mui/material';
 import ProjectCard from '../../components/ProjectCard';
 
 const Projects = () => {
@@ -25,7 +25,7 @@ const Projects = () => {
         <div>
             {/* Content for "Projects" tab */}
             <Typography variant="h4">Projects</Typography>
-            <Divider sx={{ my: 2 }} />
+            <Divider sx={{my: 2}}/>
             <Button variant="outlined" color="primary" onClick={handleCreateProject}>
                 Create New Project
             </Button>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, CardContent, Container, Typography, IconButton, Menu, MenuItem } from '@mui/material';
+import {Card, CardContent, Container, IconButton, Menu, MenuItem, Typography} from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-const ProjectCard = ({ id, title, progress, developers, description, onDelete }) => {
+const ProjectCard = ({id, title, progress, developers, description, onDelete}) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleMenuClick = (event) => {
@@ -20,17 +20,17 @@ const ProjectCard = ({ id, title, progress, developers, description, onDelete })
 
     return (
         <div>
-            <Container sx={{ mt: 2 }}>
+            <Container sx={{mt: 2}}>
                 <Card>
                     <CardContent>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                             <Typography variant="h6">{title}</Typography>
                             <IconButton
                                 aria-controls={`project-card-menu-${id}`}
                                 aria-haspopup="true"
                                 onClick={handleMenuClick}
                             >
-                                <MoreVertIcon />
+                                <MoreVertIcon/>
                             </IconButton>
                             <Menu
                                 id={`project-card-menu-${id}`}
