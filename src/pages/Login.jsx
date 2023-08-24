@@ -15,7 +15,7 @@ function Login() {
 
         if (userRole) {
             login(userRole);
-            navigate('/ApexNode/dashboard'); // Navigate to the dashboard using navigate
+            navigate('/ApexNode-public/dashboard'); // Navigate to the dashboard using navigate
         } else {
             setLoginError(true);
         }
@@ -83,12 +83,12 @@ function Login() {
                 )}
                 <Typography variant="body2" sx={{mt: 2}}>
                     Don't have an account?{' '}
-                    <Link component={RouterLink} to="/ApexNode/signup" color="primary">
+                    <Link component={RouterLink} to="/ApexNode-public/signup" color="primary">
                         Sign Up
                     </Link>
                 </Typography>
                 <Typography variant="body2">
-                    <Link component={RouterLink} to="/ApexNode/forgot-password" color="textSecondary">
+                    <Link component={RouterLink} to="/ApexNode-public/forgot-password" color="textSecondary">
                         Forgot Password?
                     </Link>
                 </Typography>

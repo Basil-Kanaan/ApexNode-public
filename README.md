@@ -43,7 +43,7 @@ If you have any questions or inquiries, feel free to get in touch with us:
 Ready to take your development skills to new heights? Join ApexNode today and be a part of our growing community of
 talented developers and innovative projects!
 
-[Sign Up Now](https://bb0lt.github.io/ApexNode)
+[Sign Up Now](https://bb0lt.github.ioApexNode-public)
 
 ## License
 

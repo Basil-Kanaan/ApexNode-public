@@ -17,11 +17,11 @@ const App = () => {
             <Router>
                 <NavBar/>
                 <Routes>
-                    <Route path="/ApexNode/" element={<Landing/>}/>
-                    <Route path="/ApexNode/login" element={<Login/>}/>
-                    <Route path="/ApexNode/signup" element={<SignUp/>}/>
-                    <Route path="/ApexNode/forgot-password" element={<ForgotPassword/>}/>
-                    <Route path="/ApexNode/dashboard/*" element={<ProtectedDashboard/>}/>
+                    <Route path="/ApexNode-public/" element={<Landing/>}/>
+                    <Route path="/ApexNode-public/login" element={<Login/>}/>
+                    <Route path="/ApexNode-public/signup" element={<SignUp/>}/>
+                    <Route path="/ApexNode-public/forgot-password" element={<ForgotPassword/>}/>
+                    <Route path="/ApexNode-public/dashboard/*" element={<ProtectedDashboard/>}/>
                     <Route path="*" element={<NotFound/>}/>
                 </Routes>
             </Router>
@@ -31,7 +31,7 @@ const App = () => {
 
 const ProtectedDashboard = () => {
     const {isAuth} = useAuth();
-    return isAuth() ? <DashboardLayout/> : <Navigate to="/ApexNode/login"/>;
+    return isAuth() ? <DashboardLayout/> : <Navigate to="/ApexNode-public/login"/>;
 };
 
 export default App;

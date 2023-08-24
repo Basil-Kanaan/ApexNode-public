@@ -12,7 +12,7 @@ function Landing() {
                 <div className="hero-content">
                     <h1 className="hero-title">ApexNode</h1>
                     <p className="hero-description">Your Solution for App & Website Development</p>
-                    <Link to="/ApexNode/signup">
+                    <Link to="/ApexNode-public/signup">
                         <Button className="secondary-button" variant="contained" size="large">
                             Sign Up
                         </Button>
@@ -44,7 +44,7 @@ function Landing() {
             </section>
             <section className="cta" id="contact">
                 <h2>Ready to Outsource Your Project?</h2>
-                <Link to="/ApexNode/signup">
+                <Link to="/ApexNode-public/signup">
                     <Button className="secondary-button" variant="contained" size="large">
                         Sign Up
                     </Button>

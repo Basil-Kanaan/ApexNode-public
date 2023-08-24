@@ -74,7 +74,7 @@ function SignUp() {
                 </Button>
                 <Typography variant="body2" sx={{mt: 2}}>
                     Already have an account?{' '}
-                    <Link component={RouterLink} to="/ApexNode/login" color="primary">
+                    <Link component={RouterLink} to="/ApexNode-public/login" color="primary">
                         Log In
                     </Link>
                 </Typography>

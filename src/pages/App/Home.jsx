@@ -8,17 +8,17 @@ const Home = ({setSelectedTab}) => {
 
     const handleViewProjects = () => {
         setSelectedTab(1); // Update the selected tab to "Projects"
-        navigate('/ApexNode/dashboard/projects');
+        navigate('/ApexNode-public/dashboard/projects');
     };
 
     const handleViewMessages = () => {
         setSelectedTab(2); // Update the selected tab to "Messages"
-        navigate('/ApexNode/dashboard/messages');
+        navigate('/ApexNode-public/dashboard/messages');
     };
 
     const handleLearnMore = () => {
         setSelectedTab(0); // Update the selected tab to "Home"
-        navigate('/ApexNode/dashboard/home');
+        navigate('/ApexNode-public/dashboard/home');
     };
 
     return (

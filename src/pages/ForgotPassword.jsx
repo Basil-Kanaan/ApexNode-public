@@ -54,7 +54,7 @@ function ForgotPassword() {
                 </Button>
                 <Typography variant="body2" sx={{mt: 2}}>
                     Remember your password?{' '}
-                    <Link component={RouterLink} to="/ApexNode/login" color="primary">
+                    <Link component={RouterLink} to="/ApexNode-public/login" color="primary">
                         Log In
                     </Link>
                 </Typography>

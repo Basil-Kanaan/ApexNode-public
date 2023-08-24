@@ -25,7 +25,7 @@ const DBNavBar = ({setSelectedTab}) => {
 
     const handleTabChange = (event, newValue) => {
         setSelectedTabState(newValue);
-        navigate('/ApexNode/dashboard/' + tabs[newValue].label.toLowerCase());
+        navigate('/ApexNode-public/dashboard/' + tabs[newValue].label.toLowerCase());
     };
 
     useEffect(() => {

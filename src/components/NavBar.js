@@ -7,15 +7,15 @@ const NavBar = () => {
         <header className="navbar">
             <nav>
                 <div className="navbar-left">
-                    <li><Link to="/ApexNode">ApexNode</Link></li>
+                    <li><Link to="/ApexNode-public">ApexNode</Link></li>
                     {/*<Link to="/ApexNode">*/}
                     {/*    <img src="public/apexnode-logo.png" alt="ApexNode Logo" className="logo"/>*/}
                     {/*</Link>*/}
                 </div>
                 <div className="navbar-right">
                     <ul>
-                        <li><Link to="/ApexNode">Home</Link></li>
-                        <li><Link to="/ApexNode/login">Login</Link></li>
+                        <li><Link to="/ApexNode-public">Home</Link></li>
+                        <li><Link to="/ApexNode-public/login">Login</Link></li>
                         {/* Add more navigation items as needed */}
                     </ul>
                 </div>

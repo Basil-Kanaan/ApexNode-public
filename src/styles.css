@@ -54,7 +54,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../public/mount_everest.jpg');
+    background-image: url('./assets/images/mount_everest.jpg');
     background-size: cover;
     background-position: center;
 }
