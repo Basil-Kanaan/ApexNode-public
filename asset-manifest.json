@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ApexNode/static/css/main.a8542b07.css",
-    "main.js": "/ApexNode/static/js/main.b19a6d9b.js",
-    "static/js/787.6285751e.chunk.js": "/ApexNode/static/js/787.6285751e.chunk.js",
-    "static/media/mount_everest.jpg": "/ApexNode/static/media/mount_everest.f1768a84a8a11d38c059.jpg",
-    "index.html": "/ApexNode/index.html",
-    "main.a8542b07.css.map": "/ApexNode/static/css/main.a8542b07.css.map",
-    "main.b19a6d9b.js.map": "/ApexNode/static/js/main.b19a6d9b.js.map",
-    "787.6285751e.chunk.js.map": "/ApexNode/static/js/787.6285751e.chunk.js.map"
+    "main.css": "/ApexNode-public/static/css/main.69c45a5a.css",
+    "main.js": "/ApexNode-public/static/js/main.6fbf0a85.js",
+    "static/js/787.6285751e.chunk.js": "/ApexNode-public/static/js/787.6285751e.chunk.js",
+    "static/media/mount_everest.jpg": "/ApexNode-public/static/media/mount_everest.f1768a84a8a11d38c059.jpg",
+    "index.html": "/ApexNode-public/index.html",
+    "main.69c45a5a.css.map": "/ApexNode-public/static/css/main.69c45a5a.css.map",
+    "main.6fbf0a85.js.map": "/ApexNode-public/static/js/main.6fbf0a85.js.map",
+    "787.6285751e.chunk.js.map": "/ApexNode-public/static/js/787.6285751e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8542b07.css",
-    "static/js/main.b19a6d9b.js"
+    "static/css/main.69c45a5a.css",
+    "static/js/main.6fbf0a85.js"
   ]
 }
